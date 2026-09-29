@@ -1,0 +1,1 @@
+# CTI-Investigation-of-a-Ransomware-Attack-Chain
