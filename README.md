@@ -22,4 +22,4 @@ Study how Black Basta attacks work, from phishing to encryption, using threat in
 
 ## AI use
 
-AI (Claude). I used my own words then Claude checked the grammar and the understandability of a text and corrected. Claude helped with the analyzing the data. I checked the facts against the CISA advisory and the lectures.
+AI (Claude). We used my own words then Claude checked the grammar and the understandability of a text and corrected. Claude helped with the analyzing the data. We checked the facts against the CISA advisory and the lectures.
