@@ -1,0 +1,38 @@
+# Source: CISA AA24-131A (#StopRansomware: Black Basta)
+#   - hashes: initial version of the advisory (May 10, 2024), Table 7 "Malicious Files"
+#     (these hashes were removed from the current page as outdated)
+#   - IPs and domains: current version (Nov 2024), Table 7 and Table 8
+# Downloaded: 2026-09-29
+
+# hashes (SHA-256), EXE files
+0554eb2ffa3582b000d558b6950ec60e876f1259c41acff2eac47ab78a53e94a
+9a55f55886285eef7ffabdd55c0232d1458175b1d868c03d3e304ce7d98980bc
+62e63388953bb30669b403867a3ac2c8130332cf78133f7fd4a7f23cdc939087
+7ad4324ea241782ea859af12094f89f9a182236542627e95b6416c8fb9757c59
+350ba7fca67721c74385faff083914ecdd66ef107a765dfb7ac08b38d5c9c0bd
+90ba27750a04d1308115fa6a90f36503398a8f528c974c5adc07ae8a6cd630e7
+fafaff3d665b26b5c057e64b4238980589deb0dff0501497ac50be1bc91b3e08
+acb60f0dd19a9a26aaaefd3326db8c28f546b6b0182ed2dcc23170bcb0af6d8f
+d73f6e240766ddd6c3c16eff8db50794ab8ab95c6a616d4ab2bc96780f13464d
+f039eaaced72618eaba699d2985f9e10d252ac5fe85d609c217b45bc8c3614f4
+
+# hashes (SHA-256), ELF file
+96339a7e87ffce6ced247feb9b4cb7c05b83ca315976a9522155bad726b8e5be
+
+# hashes (SHA-256), DLL files
+88c8b472108e0d79d16a1634499c1b45048a10a38ee799054414613cc9dccccc
+58ddbea084ce18cfb3439219ebcf2fc5c1605d2f6271610b1c7af77b8d0484bd
+
+# hashes (SHA-256), tools: rclone.exe and Winscp.exe (legitimate tools abused by the group)
+0112e3b20872760dda5f658f6b546c85f126e803e27f0577b294f335ffa5a298
+d3683beca3a40574e5fd68d30451137e4a8bbaca8c428ebb781d565d6a70385e
+
+# IPs (Table 7)
+170.130.165[.]73
+45.11.181[.]44
+66.42.118[.]54
+79.132.130[.]211
+
+# domains (Table 8)
+Moereng[.]com
+Exckicks[.]com
