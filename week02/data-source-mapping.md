@@ -23,4 +23,4 @@ Windows Security and System logs show RDP and PsExec logins to other computers (
 ## Sources
 
 1. CISA AA24-131A — #StopRansomware: Black Basta
-2. Lecture 2 slides
+2. Lecture 1-2
