@@ -39,7 +39,7 @@ In VirusTotal, a number like 53/70 means that 53 of 70 antivirus engines said th
 | 79.132.130[.]211 | ip | Shodan | Germany, Frankfurt am Main; organization/ISP servinga GmbH; AS39378; open port: 22/tcp only (OpenSSH 9.6p1, Ubuntu); last seen 2026-09-10 (screenshots: shodan79_132_130_211.png, shodan79_132_130_211_1_.png) | 2026-09-29 |
 | Moereng[.]com | domain | Maltego (VirusTotal Public API, To Resolved IPs) | resolved to 5 IPs: 170.130.165[.]73 (also in CISA Table 7), 173.255.204[.]62, 129.212.134[.]63, 209.38.63[.]194, 129.212.146[.]52 (screenshot: maltego_graph.png) | 2026-10-01 |
 | 170.130.165[.]73 | ip | Maltego (VirusTotal Public API) | resolved to 7 domain names: m165-73.uniteremind[.]com, paymentsdeposit[.]com, moereng[.]com, anyhowdo[.]com, mobilefundsaccess[.]com, wffm0b9r7st[.]com, witnessuseful[.]guru; netblock 170.130.160.0/21 (screenshot: maltego_graph.png) | 2026-10-01 |
-| all IOCs above | mixed | Summary graph (drawn by me from the collected data) | relations between the group, files, IPs, domain and hosting organization (screenshot: ioc_graph.png) | 2026-10-01 |
+
 
 ### Behaviour of one sample (VirusTotal: Details, Relations and Behavior tabs)
 
