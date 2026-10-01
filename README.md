@@ -10,9 +10,9 @@ Study how Black Basta attacks work, from phishing to encryption, using threat in
 
 ## Weekly log
 
-- Week 1 — Glossary of CTI terms, threat classification, Black Basta threat profile
-- Week 2 —
-- Week 3 —
+- Week 1 - Glossary of CTI terms, threat classification, Black Basta threat profile
+- Week 2 -
+- Week 3 -
 
 ## Sources
 
