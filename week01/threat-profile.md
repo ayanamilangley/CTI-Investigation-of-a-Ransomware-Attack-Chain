@@ -37,11 +37,11 @@ Author: Botakoz Berikkyzy, Timur Aktayev, Alina Ashirova
 | T1059.001 |              PowerShell               |        Turns off antivirus       |
 | T1068     | Exploitation for Privilege Escalation |    ZeroLogon, PrintNightmare     |
 | T1003     |         OS Credential Dumping         |               Mimikatz           |
-| T1036cc   |          Masquerading                 |    Tools named "Intel", "Dell"   |
+| T1036     |          Masquerading                 |    Tools named "Intel", "Dell"   |
 | T1562.001 |        Disable or Modify Tools        |              Backstab            |
 | T1537     |    Transfer Data to Cloud Account     |               Rclone             |
 | T1490     |          Inhibit System Recovery      |      vssadmin deletes backups    |
-| T1486c    |     Data Encrypted for Impact         |            Encrypts files        |
+| T1486     |     Data Encrypted for Impact         |            Encrypts files        |
 
 ## Hunting idea (Lecture 1, slide 19)
 
