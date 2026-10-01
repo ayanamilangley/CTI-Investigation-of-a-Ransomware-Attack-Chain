@@ -84,34 +84,18 @@ Ransomware groups often get into a network through open RDP, using stolen or gue
 
 ![Maltego graph](../images/maltego_graph.png)
 
-These transforms only ask the VirusTotal database. I did not open any of these domains or IPs.
+ I did not open any of these domains or IPs.
 
-## 3. Key observations
 
-**Is the infrastructure still active?** Mostly I can't say it is. Shodan knows nothing about two of the four IPs, one is a normal SSH server, and one has Windows ports open. But the domain Moereng[.]com and the file hashes are still marked as malicious, and Maltego shows that this domain and one CISA IP were connected in October 2024. This is only a snapshot from 2026-09-29, so it does not prove the servers are not used anymore.
 
-1. **IP addresses get old fast.** For 170.130.165[.]73 and 66.42.118[.]54 Shodan has no data. 79.132.130[.]211 was listed as likely Cobalt Strike in October 2024, but now it looks like an ordinary server in Frankfurt with only SSH open. In VirusTotal two of the IPs have only 2/91 and 5/91 detections, almost two years later. This is the Pyramid of Pain idea: an attacker can change an IP very easily, so blocking it does not hurt them much.
-2. **Two IPs have the same hosting company.** In Shodan both 45.11.181[.]44 (Bucharest) and 79.132.130[.]211 (Frankfurt) have the organization servinga GmbH, and CISA gives the same first-seen date for them (October 24, 2024). Maybe the same person rented both, but I can't prove it from public data.
-3. **Maltego found a link and some new names.** Moereng[.]com pointed to 170.130.165[.]73, which is in the CISA list. The same IP also had six other domains that are not in the report: paymentsdeposit[.]com, anyhowdo[.]com, mobilefundsaccess[.]com, wffm0b9r7st[.]com, witnessuseful[.]guru and a subdomain of uniteremind[.]com. They are only candidates. Sharing one IP does not mean they belong to Black Basta, so they need more checking before anyone blocks them. Moereng[.]com also pointed to four other IPs (173.255.204[.]62, 129.212.134[.]63, 209.38.63[.]194, 129.212.146[.]52) that I did not look into.
-4. **Domains and hashes last longer.** Moereng[.]com is still flagged by 9 of 91 vendors and tagged as command and control. The Black Basta files are still detected by 40-57 vendors. But a hash only matches one exact file, and the attackers can change it by rebuilding the file, so hashes are also not very strong.
-5. **A hash alone does not prove something is bad.** The winscp.exe hash from the report has 0 detections. It is a normal signed program. Black Basta used it to copy data out of networks. So you need the context, how and where the tool was used.
-6. **Sandbox results have noise.** The first file contacted about 20 IPs, but they are Microsoft and Akamai servers or private sandbox addresses. This kind of data should be cleaned before it goes into a threat database like MISP. That is what the filtering step in week 3 is for.
-7. **They also attack Linux.** The hash 96339a7e... is a Linux (ELF) file, and 40 of 64 vendors call it Black Basta ransomware. So detection should cover Linux servers too.
-8. **Limits of my work.** Everything is a snapshot from 2026-09-29. Shodan only shows what its scanners saw last time. Vendors in VirusTotal do not always agree, so a low number does not mean something was never bad. I also checked only part of the indicators from the report, not all of them.
+## 3. Source evaluation
 
-## 4. Source evaluation
-
-| Source | Relevance | Reliability | Timeliness |
-|---|---|---|---|
-| CISA advisory | High | High | Medium |
-| VirusTotal | High | Medium | High |
-| Shodan | Medium | Medium | High |
 
 - **CISA** is a government agency and the report was written together with the FBI and other partners, so I trust it a lot. But the report is from 2024, and CISA itself removed old indicators later.
 - **VirusTotal** is up to date and has a lot of data, but it is a mix of many vendors who sometimes disagree.
 - **Shodan** is up to date, but it only shows what its scanners found, and some addresses just had no data.
 
-## 5. Screenshots
+## 4. Screenshots
 
 **VirusTotal: files**
 
@@ -153,10 +137,4 @@ These transforms only ask the VirusTotal database. I did not open any of these d
 
 ![Summary graph of the IOCs](../images/ioc_graph.png)
 
-## 6. Problems and workarounds
 
-- **Maltego.** At first my free Maltego only had the Utilities set, which has no DNS or Whois transforms. Then I tried a Threat Miner transform and it gave HTTP error 522, which means the service did not answer. In the end I installed the VirusTotal (Public API) set from the Maltego Data Hub with my own free API key, and that worked. The key is not on any screenshot and not in the repository.
-- **VirusTotal Graph.** I tried to open it, but VirusTotal showed a contact form ("How can we help?") instead of the graph, so it is not available on a free account.
-- **My own graph.** The file `images/ioc_graph.png` is a picture I drew from the data I collected in VirusTotal and Shodan, to show everything in one place. It is not a Maltego result.
-- **Shodan.** For 170.130.165[.]73 and 66.42.118[.]54 Shodan said "No results found". I wrote it down as a result: these addresses are not visible to Shodan (anymore).
-- **Old hashes.** The current CISA page has no file hashes because they were removed as outdated. I took them from the first version of the report (May 2024).
