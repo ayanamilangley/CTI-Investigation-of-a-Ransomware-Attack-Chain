@@ -62,14 +62,14 @@ Ransomware groups often get into a network through open RDP, using stolen or gue
 
 
 
-## 3. Source evaluation
+## 2. Source evaluation
 
 
 - **CISA** is a government agency and the report was written together with the FBI and other partners, so I trust it a lot. But the report is from 2024, and CISA itself removed old indicators later.
 - **VirusTotal** is up to date and has a lot of data, but it is a mix of many vendors who sometimes disagree.
 - **Shodan** is up to date, but it only shows what its scanners found, and some addresses just had no data.
 
-## 4. Screenshots
+## 3. Screenshots
 
 **VirusTotal: files**
 
