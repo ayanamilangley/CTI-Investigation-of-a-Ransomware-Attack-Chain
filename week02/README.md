@@ -10,6 +10,6 @@
 | [osint-findings.md](osint-findings.md) | Results from VirusTotal, Shodan and Maltego, key observations, source evaluation |
 | [data-source-mapping.md](data-source-mapping.md) | Which logs show each step of a Black Basta attack (Sysmon / Windows event IDs) |
 | [../images/](../images/) | Screenshots used in the findings |
-| [../scripts/enrich_vt.py](../scripts/enrich_vt.py) | Optional script to check IOCs with the VirusTotal API |
+
 
 **Main result:** most 2024 IPs are no longer linked to Black Basta, while hashes and one domain are still flagged. This shows the Pyramid of Pain in real data: detect behavior (TTPs), not only IOCs.
