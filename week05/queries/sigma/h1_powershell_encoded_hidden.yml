@@ -1,0 +1,41 @@
+title: Hidden or Encoded PowerShell Started by cmd or services (Black Basta H1)
+id: 2b6f8c1e-5a1d-4f4e-9b1a-6e0c3f1d7a01
+status: experimental
+description: >
+  Week 5 hunt H1. PowerShell started with an encoded command, or with a hidden window and no profile.
+  Loaders used in Black Basta intrusions (Qakbot, Cobalt Strike, PsExec-style services) start PowerShell this way.
+references:
+  - https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-131a
+  - https://attack.mitre.org/techniques/T1059/001/
+author: Botakoz Berikkyzy, Alina Ashirova, Timur Aktayev
+date: 2026-10-07
+tags:
+  - attack.execution
+  - attack.t1059.001
+  - attack.t1027.010
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection_img:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+  selection_encoded:
+    CommandLine|contains:
+      - ' -enc '
+      - ' -e '
+      - ' -en '
+      - ' -encodedcommand '
+  selection_hidden:
+    CommandLine|contains:
+      - ' -w hidden'
+      - ' -windowstyle hidden'
+      - ' -w 1'
+  selection_noprofile:
+    CommandLine|contains:
+      - ' -nop'
+  condition: selection_img and (selection_encoded or (selection_hidden and selection_noprofile))
+falsepositives:
+  - Some admin scripts and software installers use -enc. Check the parent process and decode the payload.
+level: high
