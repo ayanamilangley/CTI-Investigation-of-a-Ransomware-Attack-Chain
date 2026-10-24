@@ -1,0 +1,175 @@
+{
+  "name": "Black Basta hunt - techniques seen in our datasets (Assignment 4)",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Techniques we observed in the 5 Windows datasets from Week 5 (blue), the one also detected by the CAR analytic CAR-2020-05-001 from Week 7 (red), and one technique known from intel but not seen in our logs (grey).",
+  "filters": {
+    "platforms": [
+      "Windows"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": true,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1059.001",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, 2020-09-20 16:16:56 (empire_psexec_dcerpc_tcp_svcctl): powershell -noP -sta -w 1 -enc ..., run as SYSTEM, parent cmd.exe",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1027.010",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, same event: the command is hidden in Base64 (-enc)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1564.003",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, same event: -w 1 means the PowerShell window is hidden",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1569.002",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, same time (EventID 7045 and 4697): new service 'Updater' installed, PsExec style",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1021.002",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, same time: remote service creation (the dataset name says DCE/RPC svcctl); best-fit mapping",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1685",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, decoded payload: AMSI bypass and PowerShell Script Block Logging turned off",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1105",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6 (decoded payload) and WORKSTATION5, 2020-10-23 06:36:43: Net.WebClient download from http://10.10.10.5/news.php; bitsadmin /transfer from GitHub",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1071.001",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION6, Sysmon EventID 3: powershell.exe connects to 10.10.10.5:80",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1197",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION5, 2020-10-23 06:36:43 (cmd_bitsadmin_download_psh_script): bitsadmin.exe /transfer downloads a file (v20 lists BITS Jobs under Execution, Persistence and Stealth)",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1003.001",
+      "color": "#d1495b",
+      "comment": "WORKSTATION5, 2020-10-18 23:50:05 (psh_lsass_memory_dump_comsvcs): comsvcs.dll MiniDump of lsass.exe; Sysmon 10 with access 0x1fffff and 0x1410",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1218.011",
+      "color": "#6b8fc7",
+      "comment": "WORKSTATION5, same event: rundll32.exe starts the LSASS dump",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1003.003",
+      "color": "#6b8fc7",
+      "comment": "DC01, 2023-07-19 19:20:48 (cmd_dumping_ntds_dit_file_volume_shadow_copy): vssadmin create shadow /for=C: on a domain controller",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1490",
+      "color": "#c9ced6",
+      "comment": "not in our logs (CISA advisory, Week 1): Black Basta deletes shadow copies before encryption; our datasets only contain 'create shadow'",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ff6666ff",
+      "#ffe766ff",
+      "#8ec843ff"
+    ],
+    "minValue": 0,
+    "maxValue": 100
+  },
+  "legendItems": [
+    {
+      "label": "Seen in our Week 5 datasets",
+      "color": "#6b8fc7"
+    },
+    {
+      "label": "Seen and detected by CAR-2020-05-001 (Week 7)",
+      "color": "#d1495b"
+    },
+    {
+      "label": "Known from intel, not in our logs",
+      "color": "#c9ced6"
+    }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd",
+  "selectTechniquesAcrossTactics": true,
+  "selectSubtechniquesWithParent": false,
+  "selectVisibleTechniques": false
+}

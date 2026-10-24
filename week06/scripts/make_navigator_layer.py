@@ -17,7 +17,10 @@ BASE = Path(__file__).resolve().parent.parent
 
 BLUE, RED, GREY = "#6b8fc7", "#d1495b", "#c9ced6"
 
-
+# (technique ID, name, tactic, tactic ID, where we saw it, evidence, status)
+#  status: observed      = seen in our Week 5 datasets
+#          observed_car  = seen AND detected by the Week 7 CAR analytic
+#          related       = known from intel (CISA / Week 1), not in our logs
 ROWS = [
     ("T1059.001", "PowerShell", "Execution", "TA0002",
      "WORKSTATION6, 2020-09-20 16:16:56 (empire_psexec_dcerpc_tcp_svcctl)",
