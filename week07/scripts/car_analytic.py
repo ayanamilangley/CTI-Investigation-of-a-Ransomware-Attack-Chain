@@ -1,20 +1,3 @@
-"""
-Week 7 - MITRE CAR analytic CAR-2020-05-001 "MiniDump of LSASS"
-
-The analytic (https://car.mitre.org/analytics/CAR-2020-05-001/) looks for Sysmon
-EventID 10 (a process opened another process) where the target is lsass.exe and the
-CallTrace contains dbghelp.dll or dbgcore.dll. These two libraries are used when a
-program dumps memory with the Windows function MiniDumpWriteDump.
-
-This script runs the analytic on the 5 Windows datasets from Week 5 (../../week05/data)
-and compares it with the access-mask filter we used in Week 5 (H3).
-
-Output:  ../results/car_results.csv   one row per hit
-         ../results/car_results.md    summary tables for the report
-
-Run:  python3 car_analytic.py
-"""
-
 import csv
 import json
 import zipfile
@@ -28,7 +11,6 @@ RESULTS = BASE / "results"
 SYSMON = "microsoft-windows-sysmon/operational"
 CAR_DLLS = ("dbghelp.dll", "dbgcore.dll")
 
-# Week 5 filter (copied from week05/scripts/hunt.py), used only for the comparison
 W5_ACCESS = {"0x1fffff", "0x1010", "0x1410", "0x143a", "0x1438"}
 W5_NORMAL = {"msmpeng.exe", "svchost.exe", "wmiprvse.exe", "csrss.exe", "wininit.exe",
              "services.exe", "lsm.exe", "mrt.exe", "vmtoolsd.exe", "taskmgr.exe"}
