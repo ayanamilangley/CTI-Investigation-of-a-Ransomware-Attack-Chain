@@ -125,7 +125,7 @@ In our Kill Chain table from Week 4/5, this belongs to stage 7, actions on objec
 
 ## 9. AI use
 
-Claude helped us find the CAR analytic, write the script and the queries, and draft the report. We ran the script and the Kibana queries ourselves and checked the results and the ATT&CK mapping against the CAR page.
+Claude helped us write the script and the queries, and draft the report. We ran the script and the Kibana queries ourselves and checked the results and the ATT&CK mapping against the CAR page.
 
 ## 10. Sources
 
