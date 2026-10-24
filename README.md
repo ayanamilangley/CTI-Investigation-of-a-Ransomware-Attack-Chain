@@ -17,6 +17,9 @@ Study how Black Basta attacks work, from phishing to encryption, using threat in
 | [week03](week03/) | 3 | Data processing: normalization script, MISP (Assignment 1) |
 | [week04](week04/) | 4 | The Cyber Kill Chain mapped to ATT&CK (Assignment 2) |
 | [week05](week05/) | 5 | Threat hunting: hypotheses and hunt queries in ELK (Assignment 3) |
+| [week06](week06/) | 6 | ATT&CK framework: T1003.001, mapping, Navigator layer (Assignment 4, part 1) |
+| [week07](week07/) | 7 | MITRE CAR: CAR-2020-05-001 in ELK (Assignment 4, part 2) |
+| [week08](week08/) | 8 | Adversary emulation plan (Assignment 5) |
 
 Each week folder has its own README with the syllabus task and a list of files.
 
@@ -27,6 +30,9 @@ Each week folder has its own README with the syllabus task and a list of files.
 - Week 3 - Normalization with Python (normalize.py), MISP deployment in Docker, MISP event with 21 attributes, galaxy and TLP tags, export to CSV/JSON
 - Week 4 - Cyber Kill Chain analysis of a real Black Basta attack (Storm-1811, 2024): 35 steps mapped to 34 ATT&CK techniques, Python script, diagram, ATT&CK Navigator layer, courses of action
 - Week 5 - Hypothesis-driven hunt: 3 hypotheses (encoded PowerShell, download tools, LSASS/vssadmin), queries in Kibana (ELK), run on 24,194 events from OTRF Security-Datasets: 7 hits, one confirmed lateral movement with C2
+- Week 6 - Studied T1003.001 LSASS Memory; mapped the Week 5 findings to 12 ATT&CK v20 techniques in 6 tactics; ATT&CK Navigator layer
+- Week 7 - CAR-2020-05-001 (MiniDump of LSASS) in Kibana and Python: 1 hit, 0 false positives; compared with the Week 5 filter (2 hits); mapped to ATT&CK
+- Week 8 - Safe, lab-only emulation plan of the Black Basta / Storm-1811 chain: 5 phases, 12 techniques, each with a detection from Weeks 5 and 7
 
 ## Sources
 
@@ -37,6 +43,7 @@ Each week folder has its own README with the syllabus task and a list of files.
 - Lockheed Martin Cyber Kill Chain (Hutchins, Cloppert, Amin)
 - Microsoft Threat Intelligence and Rapid7 reports on Storm-1811 / Black Basta (May 2024)
 - OTRF Security-Datasets (Windows attack logs)
+- MITRE CAR, MITRE CALDERA, Atomic Red Team
 - Lectures 1, 2, 3 and 4
 
 ## AI use
