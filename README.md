@@ -48,4 +48,4 @@ Each week folder has its own README with the syllabus task and a list of files.
 
 ## AI use
 
-We used AI (Claude). We wrote the text in our own words; Claude checked grammar and clarity and helped us analyze the data. We checked all facts against the CISA advisory and the lectures. In week 4, Claude also helped find the reports, draft the mapping and the report text, and write the script (see the AI use section in week04/report.md). In week 5, Claude helped find the datasets and write the scripts, queries and report draft (see week05/report.md).
+We used AI (Claude). We wrote the text in our own words; Claude checked grammar and clarity and helped us analyze the data. We checked all facts against the CISA advisory and the lectures. 
