@@ -1,20 +1,3 @@
-"""
-Load the Week 5 datasets (../../week05/data/*.zip) into Elasticsearch, index "blackbasta-car".
-
-This is the Week 5 loader with one change: the field CallTrace is indexed too
-(the Week 5 loader does not index it, but the CAR analytic needs it).
-The Week 5 index "blackbasta-hunt" is not touched.
-
-Only standard Python is needed (no pip install).
-Run after `docker compose up -d` (started in ../../week05/elk):   python3 load_to_elk.py
-Then in Kibana: Stack Management -> Data Views -> Create data view
-                name/pattern: blackbasta-car, timestamp field: @timestamp
-                and open Discover. Set the time range to "Last 10 years".
-
-All text fields use a lowercase normalizer, so the KQL queries in
-../queries/car_2020_05_001.md are NOT case sensitive (write them in lowercase).
-"""
-
 import json
 import sys
 import urllib.request
@@ -38,7 +21,7 @@ MAPPING = {
         "analysis": {"normalizer": {"lower": {"type": "custom", "filter": ["lowercase"]}}},
     },
     "mappings": {
-        # other fields stay in the document but are not indexed -> no type conflicts
+      
         "dynamic": False,
         "properties": {
             "@timestamp": {"type": "date"},
