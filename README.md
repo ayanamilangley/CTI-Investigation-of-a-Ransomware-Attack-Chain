@@ -20,6 +20,8 @@ Study how Black Basta attacks work, from phishing to encryption, using threat in
 | [week06](week06/) | 6 | ATT&CK framework: T1003.001, mapping, Navigator layer (Assignment 4, part 1) |
 | [week07](week07/) | 7 | MITRE CAR: CAR-2020-05-001 in ELK (Assignment 4, part 2) |
 | [week08](week08/) | 8 | Adversary emulation plan (Assignment 5) |
+| [week09](week09/) | 9 | Atomic Red Team: run the emulation, detect it in ELK (Assignment 6, part 1) |
+| [week10](week10/) | 10 | Learning APT techniques: APT41 TTPs mapped to ATT&CK (Assignment 6, part 2) |
 
 Each week folder has its own README with the syllabus task and a list of files.
 
@@ -33,6 +35,8 @@ Each week folder has its own README with the syllabus task and a list of files.
 - Week 6 - Studied T1003.001 LSASS Memory; mapped the Week 5 findings to 12 ATT&CK v20 techniques in 6 tactics; ATT&CK Navigator layer
 - Week 7 - CAR-2020-05-001 (MiniDump of LSASS) in Kibana and Python: 1 hit, 0 false positives; compared with the Week 5 filter (2 hits); mapped to ATT&CK
 - Week 8 - Safe, lab-only emulation plan of the Black Basta / Storm-1811 chain: 5 phases, 12 techniques, each with a detection from Weeks 5 and 7
+- Week 9 - Ran Atomic Red Team tests (T1059, T1003, ...) on an isolated Windows 11 VM, exported 1,766 events, and detected them with our own hunts (4 reused from Weeks 5/7, 5 new): all 4 must-detect steps (encoded PowerShell, new service, LSASS, exfil) fire, 7/9 overall. Key finding: LSA Protection blocked the LSASS handle so no Sysmon 10 was produced and the Week 7 CAR analytic did not fire — the command-line hunt still caught it (defence in depth). Also found and fixed the SwiftOnSecurity Event-10 logging gap
+- Week 10 - Profiled APT41 (G0096), mapped 42 of its techniques to ATT&CK v20, and compared them with our Black Basta chain: 14 shared techniques (already covered by our detections), with APT41's own signatures (supply chain, stolen code-signing certs, bootkit, Google Calendar C2); Navigator layer + CrowdStrike/Mandiant context
 
 ## Sources
 
@@ -43,7 +47,8 @@ Each week folder has its own README with the syllabus task and a list of files.
 - Lockheed Martin Cyber Kill Chain (Hutchins, Cloppert, Amin)
 - Microsoft Threat Intelligence and Rapid7 reports on Storm-1811 / Black Basta (May 2024)
 - OTRF Security-Datasets (Windows attack logs)
-- MITRE CAR, MITRE CALDERA, Atomic Red Team
+- MITRE CAR, MITRE CALDERA, Atomic Red Team (Red Canary), olafhartong/sysmon-modular
+- MITRE ATT&CK groups: APT41 (G0096); Mandiant APT1 report; CrowdStrike Global Threat Report 2026
 - Lectures 1, 2, 3 and 4
 
 ## AI use
