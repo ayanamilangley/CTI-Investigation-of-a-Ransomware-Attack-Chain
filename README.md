@@ -51,6 +51,3 @@ Each week folder has its own README with the syllabus task and a list of files.
 - MITRE ATT&CK groups: APT41 (G0096); Mandiant APT1 report; CrowdStrike Global Threat Report 2026
 - Lectures 1, 2, 3 and 4
 
-## AI use
-
-We used AI (Claude). We wrote the text in our own words; Claude checked grammar and clarity and helped us analyze the data. We checked all facts against the CISA advisory and the lectures. 
