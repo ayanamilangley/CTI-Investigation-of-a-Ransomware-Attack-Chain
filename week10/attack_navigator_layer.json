@@ -1,0 +1,338 @@
+{
+  "name": "APT41 (G0096) vs our Black Basta chain (Week 10)",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "APT41 techniques (MITRE ATT&CK G0016... G0096 and campaigns C0017, C0040). Red = APT41 technique also used in the Black Basta chain we studied in Weeks 4-9 (our detections already cover these). Gold = APT41 signature technique not in our chain. Blue = other APT41 technique.",
+  "filters": {
+    "platforms": [
+      "Windows",
+      "Linux",
+      "macOS"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "showID": true,
+    "showName": true,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1588.002",
+      "color": "#6b8fc7",
+      "comment": "Uses public tools: Mimikatz, Cobalt Strike, China Chopper, for mission objectives \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1588.003",
+      "color": "#e6b422",
+      "comment": "Steals code-signing certificates to sign its malware \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1566.001",
+      "color": "#6b8fc7",
+      "comment": "Spear-phishing with .chm / LNK attachments (e.g. the 2025 TOUGHPROGRESS campaign) \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1190",
+      "color": "#e6b422",
+      "comment": "Fast exploitation of public web/app vulnerabilities (Citrix, Cisco, Zoho in 2019-2020) \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1195.002",
+      "color": "#e6b422",
+      "comment": "Signature move: poisoned legitimate software (game updates, utilities) to reach victims \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1133",
+      "color": "#6b8fc7",
+      "comment": "Uses stolen VPN / remote-service access to get in \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1059.001",
+      "color": "#d1495b",
+      "comment": "Runs PowerShell payloads  (SAME as our chain, Week 9 T9-2) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1059.003",
+      "color": "#d1495b",
+      "comment": "Batch / cmd.exe  (SAME as our chain, Week 9 T9-1) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1047",
+      "color": "#6b8fc7",
+      "comment": "WMI for execution and recon \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1053.005",
+      "color": "#6b8fc7",
+      "comment": "Scheduled tasks for execution and persistence \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1547.001",
+      "color": "#d1495b",
+      "comment": "Run keys for persistence  (SAME as our chain, Week 9 T9-3) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1543.003",
+      "color": "#d1495b",
+      "comment": "Creates services for persistence  (SAME as our chain, Week 9 T9-4) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1505.003",
+      "color": "#6b8fc7",
+      "comment": "China Chopper and other web shells on compromised servers \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1542.003",
+      "color": "#e6b422",
+      "comment": "Rare MBR bootkit (ROCKBOOT) for stealthy persistence on high-value hosts \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1055",
+      "color": "#6b8fc7",
+      "comment": "Process hollowing (PLUSINJECT into svchost.exe, 2025) \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1574.001",
+      "color": "#e6b422",
+      "comment": "DLL side-loading to run payloads under trusted binaries  (overlaps our T1036 idea) \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1553.002",
+      "color": "#e6b422",
+      "comment": "Signs malware with stolen certificates to look trusted \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1036.005",
+      "color": "#d1495b",
+      "comment": "Names tools like Windows files  (SAME idea as our chain, Week 8 B3) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1140",
+      "color": "#6b8fc7",
+      "comment": "Decrypts/decodes its payloads in memory \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1070.004",
+      "color": "#6b8fc7",
+      "comment": "Deletes its files to clean up \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1014",
+      "color": "#6b8fc7",
+      "comment": "Rootkits to hide on select systems \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1112",
+      "color": "#6b8fc7",
+      "comment": "Edits the registry to hide or configure malware \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1003.001",
+      "color": "#d1495b",
+      "comment": "Mimikatz LSASS dump  (SAME as our chain + our Week 7 CAR + Week 9 T9-5) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1003.003",
+      "color": "#d1495b",
+      "comment": "Dumps the AD database on domain controllers  (SAME as our chain) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1555",
+      "color": "#6b8fc7",
+      "comment": "Steals stored credentials, including from browsers \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1018",
+      "color": "#6b8fc7",
+      "comment": "Maps other hosts before moving  (shared with our chain intel) \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1082",
+      "color": "#6b8fc7",
+      "comment": "Collects host info \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1087.002",
+      "color": "#6b8fc7",
+      "comment": "Enumerates AD accounts \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1021.002",
+      "color": "#d1495b",
+      "comment": "Spreads over SMB / admin shares  (SAME as our chain, Week 4/9) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1550.002",
+      "color": "#6b8fc7",
+      "comment": "Reuses stolen hashes to move laterally \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1570",
+      "color": "#6b8fc7",
+      "comment": "Copies tools host to host  (shared with our chain idea) \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1074.001",
+      "color": "#d1495b",
+      "comment": "Stages files before theft  (SAME as our chain, Week 9 T9-6) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1560.001",
+      "color": "#d1495b",
+      "comment": "Archives data before exfil  (SAME as our chain, Week 9 T9-7) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1056.001",
+      "color": "#6b8fc7",
+      "comment": "Keyloggers for espionage \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1071.001",
+      "color": "#d1495b",
+      "comment": "HTTP/HTTPS C2  (SAME as our chain, Week 6) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1105",
+      "color": "#d1495b",
+      "comment": "Downloads more tools  (SAME as our chain, Week 6) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1102",
+      "color": "#e6b422",
+      "comment": "Signature move: uses Google Calendar / cloud services as C2 (TOUGHPROGRESS, 2025) \u2014 APT41 signature",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1090",
+      "color": "#6b8fc7",
+      "comment": "Proxies C2 to hide the real server \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1567.002",
+      "color": "#d1495b",
+      "comment": "Exfil to cloud storage  (SAME as our chain, Week 9 T9-8) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1041",
+      "color": "#6b8fc7",
+      "comment": "Steals data over the C2 channel \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1486",
+      "color": "#d1495b",
+      "comment": "Deployed ransomware (Encryptor/ransomware in game studios)  (SAME as Black Basta's goal) \u2014 in our chain",
+      "enabled": true,
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1496.001",
+      "color": "#6b8fc7",
+      "comment": "Crypto-mining on victim machines for profit \u2014 APT41",
+      "enabled": true,
+      "showSubtechniques": false
+    }
+  ],
+  "legendItems": [
+    {
+      "label": "Also in our Black Basta chain (we already detect it)",
+      "color": "#d1495b"
+    },
+    {
+      "label": "APT41 signature technique",
+      "color": "#e6b422"
+    },
+    {
+      "label": "Other APT41 technique",
+      "color": "#6b8fc7"
+    }
+  ],
+  "showTacticRowBackground": true,
+  "tacticRowBackground": "#2a2a2a",
+  "selectTechniquesAcrossTactics": true
+}

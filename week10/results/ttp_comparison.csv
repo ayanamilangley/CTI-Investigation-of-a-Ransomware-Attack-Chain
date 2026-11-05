@@ -1,0 +1,43 @@
+technique_id,technique,tactic,tactic_id,in_black_basta_chain,apt41_signature,note
+T1588.002,Tool,Resource Development,TA0042,no,no,"Uses public tools: Mimikatz, Cobalt Strike, China Chopper, for mission objectives"
+T1588.003,Code Signing Certificates,Resource Development,TA0042,no,yes,Steals code-signing certificates to sign its malware
+T1566.001,Spearphishing Attachment,Initial Access,TA0001,no,no,Spear-phishing with .chm / LNK attachments (e.g. the 2025 TOUGHPROGRESS campaign)
+T1190,Exploit Public-Facing Application,Initial Access,TA0001,no,yes,"Fast exploitation of public web/app vulnerabilities (Citrix, Cisco, Zoho in 2019-2020)"
+T1195.002,Compromise Software Supply Chain,Initial Access,TA0001,no,yes,"Signature move: poisoned legitimate software (game updates, utilities) to reach victims"
+T1133,External Remote Services,Initial Access,TA0001,no,no,Uses stolen VPN / remote-service access to get in
+T1059.001,PowerShell,Execution,TA0002,yes,no,"Runs PowerShell payloads  (SAME as our chain, Week 9 T9-2)"
+T1059.003,Windows Command Shell,Execution,TA0002,yes,no,"Batch / cmd.exe  (SAME as our chain, Week 9 T9-1)"
+T1047,Windows Management Instrumentation,Execution,TA0002,no,no,WMI for execution and recon
+T1053.005,Scheduled Task,Execution,TA0002,no,no,Scheduled tasks for execution and persistence
+T1547.001,Registry Run Keys / Startup Folder,Persistence,TA0003,yes,no,"Run keys for persistence  (SAME as our chain, Week 9 T9-3)"
+T1543.003,Windows Service,Persistence,TA0003,yes,no,"Creates services for persistence  (SAME as our chain, Week 9 T9-4)"
+T1505.003,Web Shell,Persistence,TA0003,no,no,China Chopper and other web shells on compromised servers
+T1542.003,Bootkit,Persistence,TA0003,no,yes,Rare MBR bootkit (ROCKBOOT) for stealthy persistence on high-value hosts
+T1055,Process Injection,Privilege Escalation,TA0004,no,no,"Process hollowing (PLUSINJECT into svchost.exe, 2025)"
+T1574.001,DLL Search Order / Side-Loading,Stealth,TA0005,no,yes,DLL side-loading to run payloads under trusted binaries  (overlaps our T1036 idea)
+T1553.002,Code Signing,Defense Impairment,TA0112,no,yes,Signs malware with stolen certificates to look trusted
+T1036.005,Match Legitimate Name or Location,Stealth,TA0005,yes,no,"Names tools like Windows files  (SAME idea as our chain, Week 8 B3)"
+T1140,Deobfuscate/Decode Files or Information,Stealth,TA0005,no,no,Decrypts/decodes its payloads in memory
+T1070.004,File Deletion,Stealth,TA0005,no,no,Deletes its files to clean up
+T1014,Rootkit,Stealth,TA0005,no,no,Rootkits to hide on select systems
+T1112,Modify Registry,Defense Impairment,TA0112,no,no,Edits the registry to hide or configure malware
+T1003.001,LSASS Memory,Credential Access,TA0006,yes,no,Mimikatz LSASS dump  (SAME as our chain + our Week 7 CAR + Week 9 T9-5)
+T1003.003,NTDS,Credential Access,TA0006,yes,no,Dumps the AD database on domain controllers  (SAME as our chain)
+T1555,Credentials from Password Stores,Credential Access,TA0006,no,no,"Steals stored credentials, including from browsers"
+T1018,Remote System Discovery,Discovery,TA0007,no,no,Maps other hosts before moving  (shared with our chain intel)
+T1082,System Information Discovery,Discovery,TA0007,no,no,Collects host info
+T1087.002,Domain Account Discovery,Discovery,TA0007,no,no,Enumerates AD accounts
+T1021.002,SMB / Windows Admin Shares,Lateral Movement,TA0008,yes,no,"Spreads over SMB / admin shares  (SAME as our chain, Week 4/9)"
+T1550.002,Pass the Hash,Lateral Movement,TA0008,no,no,Reuses stolen hashes to move laterally
+T1570,Lateral Tool Transfer,Lateral Movement,TA0008,no,no,Copies tools host to host  (shared with our chain idea)
+T1074.001,Local Data Staging,Collection,TA0009,yes,no,"Stages files before theft  (SAME as our chain, Week 9 T9-6)"
+T1560.001,Archive via Utility,Collection,TA0009,yes,no,"Archives data before exfil  (SAME as our chain, Week 9 T9-7)"
+T1056.001,Keylogging,Collection,TA0009,no,no,Keyloggers for espionage
+T1071.001,Web Protocols,Command and Control,TA0011,yes,no,"HTTP/HTTPS C2  (SAME as our chain, Week 6)"
+T1105,Ingress Tool Transfer,Command and Control,TA0011,yes,no,"Downloads more tools  (SAME as our chain, Week 6)"
+T1102,Web Service,Command and Control,TA0011,no,yes,"Signature move: uses Google Calendar / cloud services as C2 (TOUGHPROGRESS, 2025)"
+T1090,Proxy,Command and Control,TA0011,no,no,Proxies C2 to hide the real server
+T1567.002,Exfiltration to Cloud Storage,Exfiltration,TA0010,yes,no,"Exfil to cloud storage  (SAME as our chain, Week 9 T9-8)"
+T1041,Exfiltration Over C2 Channel,Exfiltration,TA0010,no,no,Steals data over the C2 channel
+T1486,Data Encrypted for Impact,Impact,TA0040,yes,no,Deployed ransomware (Encryptor/ransomware in game studios)  (SAME as Black Basta's goal)
+T1496.001,Compute Hijacking,Impact,TA0040,no,no,Crypto-mining on victim machines for profit
