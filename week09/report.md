@@ -34,7 +34,7 @@ Every test maps to a step of our Week 8 plan, so Week 9 is the Week 8 plan made 
 | T9-1 | T1059.003 Windows Command Shell | #1 Create and Execute Batch Script | B1 | |
 | T9-2 | **T1059.001** PowerShell | #15 `-EncodedCommand`, #17 obfuscated IEX | B2 | ✅ |
 | T9-3 | T1547.001 Registry Run Keys | #1 Reg Key Run | C1 | |
-| T9-4 | T1543.003 Windows Service | #1 Service Installation | C2 | ✅ |
+| T9-4 | T1543.003 Windows Service | #2 Service Installation CMD | C2 | ✅ |
 | T9-5 | **T1003.001** LSASS Memory | #2 comsvcs.dll MiniDump, #1 ProcDump | D1 | ✅ |
 | T9-6 | T1074.001 Local Data Staging | #1 Stage data | E1 | |
 | T9-7 | T1560.001 Archive via Utility | #1 Compress data | E2 | |
